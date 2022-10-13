@@ -1,26 +1,18 @@
 import { useQuery } from "@apollo/client";
-import fetchFollowingQuery from "../queries/fetchFollowingQuery.js";
+import recommendedProfilesQuery from '../queries/recommendedProfilesQuery.js';
 import Profile from '../components/Profile.js';
 
 export default function Home() {
-  const { loading, error, data } = useQuery(fetchFollowingQuery, {
-    variables: {
-      request: {
-        address: process.env.NEXT_PUBLIC_INITIAL_WALLET,
-        limit: process.env.NEXT_PUBLIC_LENSAPI_QUERY_LIMIT,
-      },
-    },
-  });
+  const {loading, error, data} = useQuery(recommendedProfilesQuery);
 
   if (loading) return 'Loading..';
   if (error) return `Error! ${error.message}`;
-  
-  console.log(data);
 
   return (
     <div>
-      {data.following.items.map((following) => {
-        return (<Profile key={following.profile.id} profile={following.profile} displayFullProfile={true} />);
+      {data.recommendedProfilesQuery.map((profile, index) => {
+        console.log(`Profile ${index}:`, profile);
+        return <Profile key={profile.id} profile={profile} displayFullProfile={false} />;
       })}
     </div>
   )

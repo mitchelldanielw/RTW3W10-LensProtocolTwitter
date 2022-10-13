@@ -9,9 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@apollo/client": "^3.6.9",
+    "@apollo/client": "^3.7.0",
     "@heroicons/react": "^1.0.6",
-    "graphql": "^16.5.0",
+    "graphql": "^16.6.0",
     "lit-js-sdk": "^1.1.202",
     "next": "12.2.2",
     "next-themes": "^0.2.0",

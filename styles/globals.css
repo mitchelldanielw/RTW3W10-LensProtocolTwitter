@@ -1,0 +1,56 @@
+/* ./styles/globals.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+
+.navbar-nav > .active > a { 
+  background-color:  #7708ff;
+}
+
+.header {
+  text-justify: center;
+  color-scheme: dark;
+}
+
+.title a {
+  background: linear-gradient(to right, #d021f3,
+                    #7708ff, #4f74fb, #44cfee);
+  color: transparent;
+  background-clip: text;
+  margin: 10;
+  font-size: 2rem;
+}
+
+.body {
+  padding: 0;
+  margin: 0;
+  font-size: 1rem;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+  position: sticky;
+  color: white;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+ 
+  body {
+    color: white;
+    background-image: url('image.webp');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+  }
+}
